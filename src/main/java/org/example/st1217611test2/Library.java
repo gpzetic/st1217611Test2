@@ -6,7 +6,7 @@ public class Library {
 
     public Library(String address, ArrayList<Book> books) {
         setAddress(address);
-        setBooks(books);
+        books = new ArrayList<Book>();
     }
 
     public String getAddress() {
@@ -14,8 +14,9 @@ public class Library {
     }
 
     public void setAddress(String address) {
-
-        this.address = address;
+        address = address.trim();
+        if (address.length() > 10) this.address = address;
+        else throw new IllegalArgumentException("Address too short");
     }
 
     public ArrayList<Book> getBooks() {
