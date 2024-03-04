@@ -44,7 +44,11 @@ public class Library {
         return cats;
     }
 
-//    public ArrayList<Book> getBooksInCategory(String cat) {
-//
-//    }
+    public ArrayList<Book> getBooksInCategory(String cat) {
+        ArrayList<Book> bs = new ArrayList<>();
+        for (Book b : books) {
+            if (b.getCategory().equals(cat)) bs.add(b);
+        }
+        return bs;
+    }
 }
