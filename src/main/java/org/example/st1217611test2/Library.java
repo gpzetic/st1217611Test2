@@ -29,4 +29,11 @@ public class Library {
     public void addBook(Book b) {
         books.add(b);
     }
+    public double inventoryValue() {
+        double sum = 0.0d;
+        for (Book b : books) {
+            sum += b.getPrice();
+        }
+        return sum;
+    }
 }
