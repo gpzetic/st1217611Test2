@@ -1,4 +1,8 @@
 package org.example.st1217611test2;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class Book {
     private String title;
     private String author;
@@ -53,7 +57,12 @@ public class Book {
     }
 
     public void setCategory(String category) {
-        this.category = category;
+        List<String> validCategories = Arrays.asList("Mystery", "Thriller", "Horror", "Historical",
+                "Romance", "Western", "Fantasy", "TextBook", "CookBook", "Self Help", "Fiction",
+                "Indigenous");
+        category = category.trim();
+        if (validCategories.contains(category)) this.category = category;
+        else throw new IllegalArgumentException("Category is invalid");
     }
 
     public double getPrice() {
