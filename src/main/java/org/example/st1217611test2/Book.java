@@ -21,7 +21,7 @@ public class Book {
     public void setTitle(String title) {
         title = title.trim();
         if (title.length() < 4) {
-            throw new IllegalArgumentException("Title too long");
+            throw new IllegalArgumentException("Title is too short");
         }
         this.title = title;
     }
@@ -31,6 +31,10 @@ public class Book {
     }
 
     public void setAuthor(String author) {
+        author = author.trim();
+        if (author.length() < 2) {
+            throw new IllegalArgumentException("Author name is too short");
+        }
         this.author = author;
     }
 
