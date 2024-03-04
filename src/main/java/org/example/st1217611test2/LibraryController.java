@@ -42,7 +42,8 @@ public class LibraryController implements Initializable {
     }
     @FXML
     protected void nextClick() {
-
+        currentBook = (currentBook + 1) % library.getBooks().size();
+        setTexts();
     }
 
     @Override
@@ -62,7 +63,7 @@ public class LibraryController implements Initializable {
         library.addBook(book6);
         address.setText("Address: " + library.getAddress());
         books.setText("Number of Books: " + String.valueOf(library.getBooks().size()));
-        value.setText("Value of Books: $" + String.valueOf(library.inventoryValue()));
+        value.setText("Value of Books: $" + String.valueOf(Math.floor(library.inventoryValue())));
         setTexts();
     }
 }
