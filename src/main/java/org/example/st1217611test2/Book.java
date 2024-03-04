@@ -43,7 +43,9 @@ public class Book {
     }
 
     public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+        ISBN = ISBN.trim();
+        if (ISBN.matches("\\d{13}") && ISBN.length() == 13) this.ISBN = ISBN;
+        else throw new IllegalArgumentException("The isbn should consist of 13 numeric characters.");
     }
 
     public String getCategory() {
