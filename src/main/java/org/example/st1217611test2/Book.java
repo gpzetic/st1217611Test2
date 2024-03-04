@@ -70,6 +70,7 @@ public class Book {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        if (price >= 0 && price <= 2000) this.price = price;
+        else throw new IllegalArgumentException("Price too high or too low");
     }
 }
