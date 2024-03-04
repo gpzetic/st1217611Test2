@@ -1,3 +1,5 @@
+package org.example.st1217611test2;
+import java.util.ArrayList;
 public class Library {
     private String address;
     private ArrayList<Book> books;
@@ -12,7 +14,7 @@ public class Library {
     }
 
     public void setAddress(String address) {
-        if (address.charAt(0))
+
         this.address = address;
     }
 

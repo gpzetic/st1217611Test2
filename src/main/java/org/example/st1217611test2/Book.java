@@ -1,3 +1,4 @@
+package org.example.st1217611test2;
 public class Book {
     private String title;
     private String author;
@@ -18,6 +19,10 @@ public class Book {
     }
 
     public void setTitle(String title) {
+        title = title.trim();
+        if (title.length() < 4) {
+            throw new IllegalArgumentException("Title too long");
+        }
         this.title = title;
     }
 

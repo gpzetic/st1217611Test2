@@ -18,6 +18,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        Book b = new Book(" dddd ", "d", "d", "d", 2.0);
         launch();
     }
 }
