@@ -15,6 +15,7 @@ public class LibraryController implements Initializable {
     Book book4;
     Book book5;
     Book book6;
+    Book book7;
     int currentBook = 0;
     @FXML
     private Text address;
@@ -38,7 +39,7 @@ public class LibraryController implements Initializable {
         author.setText(library.getBooks().get(currentBook).getAuthor());
         isbn.setText(library.getBooks().get(currentBook).getISBN());
         category.setText(library.getBooks().get(currentBook).getCategory());
-        price.setText(String.valueOf(library.getBooks().get(currentBook).getPrice()));
+        price.setText("$" + String.valueOf(library.getBooks().get(currentBook).getPrice()));
     }
     @FXML
     protected void nextClick() {
@@ -55,15 +56,17 @@ public class LibraryController implements Initializable {
         book4 = new Book("Plant You","Carleigh Bodrug","9780306923043",38.00,"CookBook");
         book5 = new Book("Five Little Indians","Michelle Good","9781443459181",18.39,"Indigenous");
         book6 = new Book("The Christie Affair","Nina De Gramont","9781250282132",38.00,"Romance");
+        book7 = new Book("The Christie Affair 2","Nina De Gramont","9781250282132",38.00,"Romance");
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
         library.addBook(book4);
         library.addBook(book5);
         library.addBook(book6);
+        library.addBook(book7);
         address.setText("Address: " + library.getAddress());
         books.setText("Number of Books: " + String.valueOf(library.getBooks().size()));
-        value.setText("Value of Books: $" + String.valueOf(Math.floor(library.inventoryValue())));
+        value.setText("Value of Books: $" + String.valueOf(Math.floor(100 * library.inventoryValue()) / 100));
         setTexts();
     }
 }
