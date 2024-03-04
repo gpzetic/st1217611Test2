@@ -4,7 +4,7 @@ public class Library {
     private String address;
     private ArrayList<Book> books;
 
-    public Library(String address, ArrayList<Book> books) {
+    public Library(String address) {
         setAddress(address);
         books = new ArrayList<Book>();
     }
