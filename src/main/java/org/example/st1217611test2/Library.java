@@ -36,4 +36,15 @@ public class Library {
         }
         return sum;
     }
+    public ArrayList<String> getCategories() {
+        ArrayList<String> cats = new ArrayList<>();
+        for (Book b : books) {
+            if (!cats.contains(b.getCategory())) cats.add(b.getCategory());
+        }
+        return cats;
+    }
+
+//    public ArrayList<Book> getBooksInCategory(String cat) {
+//
+//    }
 }
